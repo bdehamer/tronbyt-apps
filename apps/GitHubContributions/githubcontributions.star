@@ -116,7 +116,7 @@ def render_contribution_graph(grid):
     cell_width = 8 if canvas.is2x() else 4
     weekday_height = 8 if canvas.is2x() else 4
     weekend_height = 8 if canvas.is2x() else 3
-    left_padding = 6 if canvas.is2x() else 2
+    left_padding = 6 if canvas.is2x() else 0
 
     children = []
 
