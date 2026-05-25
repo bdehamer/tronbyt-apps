@@ -74,8 +74,8 @@ def normalize_contributions(weeks_data):
     if not weeks_data or not weeks_data.get("weeks"):
         return []
 
-    # 1. Get the last 30 weeks of data
-    weeks = weeks_data["weeks"][-30:]
+    # 1. Get the last 13 weeks of data
+    weeks = weeks_data["weeks"][-13:]
 
     # 2. Dynamically calculate the number of weeks we actually got
     num_weeks = len(weeks)
@@ -225,9 +225,10 @@ def main(config):
     grid = normalize_contributions(weeks_data)
 
     return render.Root(
-        delay = 100,  # 100ms per frame
-        show_full_animation = True,
-        child = get_phased_graph(grid),
+        #delay = 100,  # 100ms per frame
+        #show_full_animation = True,
+        #child = get_phased_graph(grid),
+        child = render_contribution_graph(grid),
     )
 
 def get_schema():
