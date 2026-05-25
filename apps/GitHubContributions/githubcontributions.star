@@ -74,8 +74,8 @@ def normalize_contributions(weeks_data):
     if not weeks_data or not weeks_data.get("weeks"):
         return []
 
-    # 1. Get the last 13 weeks of data
-    weeks = weeks_data["weeks"][-13:]
+    # 1. Get the last 12 weeks of data
+    weeks = weeks_data["weeks"][-12:]
 
     # 2. Dynamically calculate the number of weeks we actually got
     num_weeks = len(weeks)
@@ -116,7 +116,7 @@ def render_contribution_graph(grid):
     cell_width = 8 if canvas.is2x() else 4
     weekday_height = 8 if canvas.is2x() else 4
     weekend_height = 8 if canvas.is2x() else 3
-    left_padding = 6 if canvas.is2x() else 0
+    left_padding = 6 if canvas.is2x() else 2
 
     children = []
 
